@@ -6,18 +6,32 @@ public class ObjectOperator : MonoBehaviour
 {
     [SerializeField] public int code;
     [SerializeField] GameObject control;
-    //[SerializeField] DeviceOperator instance = GameObject.AddComponent<DeviceOperator>();
-    //[SerializeField] var instance = new DeviceOperator();
+    [SerializeField] private bool item;
+
     void Start()
     {
-        control = GameObject.Find("Stuff");
     }
 
 
     public void Operate()
     {
-        control.GetComponent<DeviceOperator>().ShowMessage(code);
-        //StartCoroutine(instance.ShowMessage(code, 10));
-        Destroy(this.gameObject);
+        if (item)
+        {
+            control.GetComponent<DeviceOperator>().ShowMessage(code);
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            if(control.GetComponent<DeviceOperator>().collected == 3)
+            {
+                //go to choice scene
+            }
+            else
+            {
+                //not everything collected
+                control.GetComponent<DeviceOperator>().ShowMessage(code);
+            }
+        }
+
     }
 }
