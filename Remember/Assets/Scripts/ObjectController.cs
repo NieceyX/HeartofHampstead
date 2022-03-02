@@ -14,25 +14,34 @@ public class ObjectController : MonoBehaviour
     [SerializeField]
     private List<GameObject> dayThree;
 
-    [HideInInspector]
-    public int day = 1;
-
+    public static class Stats
+    {
+        public static int day = 1;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        if (day == 1)
+        if (Stats.day == 1)
         {
             foreach (GameObject item in dayOne)
             {
                 item.SetActive(true);
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        else if (Stats.day == 2)
+        {
+            foreach (GameObject item in dayTwo)
+            {
+                item.SetActive(true);
+            }
+        }
+        else if (Stats.day == 3)
+        {
+            foreach (GameObject item in dayThree)
+            {
+                item.SetActive(true);
+            }
+        }
     }
 }

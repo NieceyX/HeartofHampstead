@@ -50,5 +50,11 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+    public void ChoiceScreen()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        SceneManager.LoadScene("ChoiceSelect");
+    }
 }
 
