@@ -14,6 +14,7 @@ namespace StarterAssets
 		public bool jump;
 		public bool sprint;
 		public bool interact;
+		public bool button;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -52,6 +53,11 @@ namespace StarterAssets
 		{
 			InteractInput(value.isPressed);
 		}
+
+		public void OnButton(InputValue value)
+		{
+			ButtonInput(value.isPressed);
+		}
 #else
 		// old input sys if we do decide to have it (most likely wont)...
 #endif
@@ -85,6 +91,14 @@ namespace StarterAssets
 			{
 				hitCollider.SendMessage("Operate", SendMessageOptions.DontRequireReceiver);
 			}
+		}
+
+		public void ButtonInput(bool newButtonState)
+		{
+			GameObject popUp = GameObject.Find("PopUp");
+			popUp.gameObject.SetActive(false);
+			Cursor.visible = false;
+			Cursor.lockState = CursorLockMode.Locked;
 		}
 
 #if !UNITY_IOS || !UNITY_ANDROID
