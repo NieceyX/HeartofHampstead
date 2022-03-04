@@ -6,11 +6,11 @@ using UnityEngine;
 public class Beliefs : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI text1;
+    private TextMeshProUGUI text1; // royal
     [SerializeField]
-    private TextMeshProUGUI text2;
+    private TextMeshProUGUI text2; // evil
     [SerializeField]
-    private TextMeshProUGUI text3;
+    private TextMeshProUGUI text3; // power
 
     // Start is called before the first frame update
     void Start()

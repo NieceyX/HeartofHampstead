@@ -1,6 +1,7 @@
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 #endif
 
 namespace StarterAssets
@@ -95,10 +96,17 @@ namespace StarterAssets
 
 		public void ButtonInput(bool newButtonState)
 		{
-			GameObject popUp = GameObject.Find("PopUp");
-			popUp.gameObject.SetActive(false);
-			Cursor.visible = false;
-			Cursor.lockState = CursorLockMode.Locked;
+			Scene scene = SceneManager.GetActiveScene();
+			if (scene.name == "World")
+            {
+				GameObject popUp = GameObject.Find("PopUp");
+				popUp.gameObject.SetActive(false);
+			}
+			else if(scene.name == "ChoiceSelect")
+            {
+				//see if can return
+            }
+
 		}
 
 #if !UNITY_IOS || !UNITY_ANDROID

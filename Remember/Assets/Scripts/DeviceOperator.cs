@@ -98,8 +98,8 @@ public class DeviceOperator : MonoBehaviour
                 collected += 1;
                 break;
         }
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
         popUp.SetActive(true);
     }
 
