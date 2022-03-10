@@ -24,6 +24,8 @@ namespace StarterAssets
 		[Header("Mouse Cursor Settings")]
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
+
+		public Animator _animator;
 #endif
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
@@ -90,6 +92,7 @@ namespace StarterAssets
 			Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
 			foreach (Collider hitCollider in hitColliders)
 			{
+				_animator.SetTrigger("Grab");
 				hitCollider.SendMessage("Operate", SendMessageOptions.DontRequireReceiver);
 			}
 		}

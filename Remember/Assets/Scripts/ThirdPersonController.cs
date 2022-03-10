@@ -82,7 +82,7 @@ namespace StarterAssets
 		private int _animIDFreeFall;
 		private int _animIDMotionSpeed;
 
-		private Animator _animator;
+		public Animator _animator;
 		private CharacterController _controller;
 		private StarterAssetsInputs _input;
 		private GameObject _mainCamera;
@@ -102,9 +102,10 @@ namespace StarterAssets
 
 		private void Start()
 		{
-			_hasAnimator = TryGetComponent(out _animator);
+			//_hasAnimator = TryGetComponent(out _animator);
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
+			_animator = GetComponentInChildren<Animator>();
 
 			AssignAnimationIDs();
 
@@ -115,7 +116,7 @@ namespace StarterAssets
 
 		private void Update()
 		{
-			_hasAnimator = TryGetComponent(out _animator);
+			//_hasAnimator = TryGetComponent(out _animator);
 			
 			JumpAndGravity();
 			GroundedCheck();
@@ -145,7 +146,7 @@ namespace StarterAssets
 			// update animator if using character
 			if (_hasAnimator)
 			{
-				_animator.SetBool(_animIDGrounded, Grounded);
+				//_animator.SetBool(_animIDGrounded, Grounded);
 			}
 		}
 
@@ -175,7 +176,15 @@ namespace StarterAssets
 
 			// note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
 			// if there is no input, set the target speed to 0
-			if (_input.move == Vector2.zero) targetSpeed = 0.0f;
+			if (_input.move == Vector2.zero)
+			{
+				_animator.SetBool("IsRunning", false);
+				targetSpeed = 0.0f;
+			}
+			else
+            {
+				_animator.SetBool("IsRunning", true);
+			}
 
 			// a reference to the players current horizontal velocity
 			float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
@@ -222,8 +231,8 @@ namespace StarterAssets
 			// update animator if using character
 			if (_hasAnimator)
 			{
-				_animator.SetFloat(_animIDSpeed, _animationBlend);
-				_animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
+				//_animator.SetFloat(_animIDSpeed, _animationBlend);
+				//_animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
 			}
 		}
 
@@ -237,8 +246,8 @@ namespace StarterAssets
 				// update animator if using character
 				if (_hasAnimator)
 				{
-					_animator.SetBool(_animIDJump, false);
-					_animator.SetBool(_animIDFreeFall, false);
+					//_animator.SetBool(_animIDJump, false);
+					//_animator.SetBool(_animIDFreeFall, false);
 				}
 
 				// stop our velocity dropping infinitely when grounded
@@ -250,13 +259,14 @@ namespace StarterAssets
 				// Jump
 				if (_input.jump && _jumpTimeoutDelta <= 0.0f)
 				{
+					_animator.SetTrigger("Jump");
 					// the square root of H * -2 * G = how much velocity needed to reach desired height
 					_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
 
 					// update animator if using character
 					if (_hasAnimator)
 					{
-						_animator.SetBool(_animIDJump, true);
+						//_animator.SetBool(_animIDJump, true);
 					}
 				}
 
@@ -281,7 +291,7 @@ namespace StarterAssets
 					// update animator if using character
 					if (_hasAnimator)
 					{
-						_animator.SetBool(_animIDFreeFall, true);
+						//_animator.SetBool(_animIDFreeFall, true);
 					}
 				}
 
