@@ -88,12 +88,19 @@ namespace StarterAssets
 
 		public void InteractInput(bool newInteractState)
 		{
-			//interact = newInteractState;
 			Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
 			foreach (Collider hitCollider in hitColliders)
 			{
-				_animator.SetTrigger("Grab");
-				hitCollider.SendMessage("Operate", SendMessageOptions.DontRequireReceiver);
+				if (hitCollider.gameObject.layer == 6)
+                {
+					_animator.SetTrigger("Grab");
+					hitCollider.SendMessage("Operate", SendMessageOptions.DontRequireReceiver);
+				}
+				else if (hitCollider.gameObject.layer == 7)
+                {
+					_animator.SetTrigger("Talk");
+				}
+
 			}
 		}
 
@@ -105,10 +112,6 @@ namespace StarterAssets
 				GameObject popUp = GameObject.Find("PopUp");
 				popUp.gameObject.SetActive(false);
 			}
-			else if(scene.name == "ChoiceSelect")
-            {
-				//see if can return
-            }
 
 		}
 

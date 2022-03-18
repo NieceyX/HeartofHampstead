@@ -47,11 +47,16 @@ public class DeviceOperator : MonoBehaviour
             ObjectConts.secObj2 = "The evil object cursed all those who possesed it to lose their minds";
             ObjectConts.secObj3 = "The power grew, and everyone could see the glow for miles around";
 
-            ObjectConts.thirdObj1 = "PLACEHOLDER";
-            ObjectConts.thirdObj2 = "PLACEHOLDER";
-            ObjectConts.thirdObj3 = "PLACEHOLDER";
+            ObjectConts.thirdObj1 = "The Queen kept the gift safe from others, outsiders never saw it";
+            ObjectConts.thirdObj2 = "The great evil brought war and famine to the land, to all except those who worshiped it";
+            ObjectConts.thirdObj3 = "This power was kept safe from those who sought to use it for harm";
 
             ObjectConts.set = true;
+        }
+        if (ObjectController.Stats.day == 4)
+        {
+            popUpText.text = "Thank you for playing, that is all for the demo so far!";
+            popUp.SetActive(true);
         }
     }
     public void ShowMessage(int code)
