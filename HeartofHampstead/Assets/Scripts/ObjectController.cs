@@ -6,13 +6,23 @@ public class ObjectController : MonoBehaviour
 {
     [Header("Day Objects")]
     [SerializeField]
-    private List<GameObject> dayOne;
+    private List<GameObject> dayOneItems;
 
     [SerializeField]
-    private List<GameObject> dayTwo;
+    private List<GameObject> dayTwoItems;
 
     [SerializeField]
-    private List<GameObject> dayThree;
+    private List<GameObject> dayThreeItems;
+
+    [Header("Day Villagers")]
+    [SerializeField]
+    private List<GameObject> dayOneVill;
+
+    [SerializeField]
+    private List<GameObject> dayTwoVill;
+
+    [SerializeField]
+    private List<GameObject> dayThreeVill;
 
     public static class Stats
     {
@@ -24,21 +34,21 @@ public class ObjectController : MonoBehaviour
     {
         if (Stats.day == 1)
         {
-            foreach (GameObject item in dayOne)
+            foreach (GameObject item in dayOneItems)
             {
                 item.SetActive(true);
             }
         }
         else if (Stats.day == 2)
         {
-            foreach (GameObject item in dayTwo)
+            foreach (GameObject item in dayTwoItems)
             {
                 item.SetActive(true);
             }
         }
         else if (Stats.day == 3)
         {
-            foreach (GameObject item in dayThree)
+            foreach (GameObject item in dayThreeItems)
             {
                 item.SetActive(true);
             }

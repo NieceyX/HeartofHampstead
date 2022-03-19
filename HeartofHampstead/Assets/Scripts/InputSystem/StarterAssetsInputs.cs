@@ -91,7 +91,7 @@ namespace StarterAssets
 			Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
 			foreach (Collider hitCollider in hitColliders)
 			{
-				if (hitCollider.gameObject.layer == 6)
+				if (hitCollider.gameObject.layer == 6 || hitCollider.gameObject.layer == 8)
                 {
 					_animator.SetTrigger("Grab");
 					hitCollider.SendMessage("Operate", SendMessageOptions.DontRequireReceiver);
@@ -99,6 +99,7 @@ namespace StarterAssets
 				else if (hitCollider.gameObject.layer == 7)
                 {
 					_animator.SetTrigger("Talk");
+					hitCollider.SendMessage("Operate", SendMessageOptions.DontRequireReceiver);
 				}
 
 			}

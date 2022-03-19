@@ -8,8 +8,6 @@ public class ObjectOperator : MonoBehaviour
     public int code;
     [SerializeField] 
     GameObject control;
-    [SerializeField] 
-    private bool item;
 
     [SerializeField]
     private GameObject objCont;
@@ -24,10 +22,14 @@ public class ObjectOperator : MonoBehaviour
 
     public void Operate()
     {
-        if (item)
+        if (this.gameObject.layer == 6)
         {
             control.GetComponent<DeviceOperator>().ShowMessage(code);
             Destroy(this.gameObject);
+        }
+        else if (this.gameObject.layer == 7)
+        {
+            control.GetComponent<DeviceOperator>().ShowMessage(code);
         }
         else
         {
