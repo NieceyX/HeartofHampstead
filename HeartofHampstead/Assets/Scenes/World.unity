@@ -1390,7 +1390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7e827f82e11bf2a478a2cfe5d3ae1423, type: 3}
       propertyPath: m_Name
-      value: Beatriz
+      value: villager1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7e827f82e11bf2a478a2cfe5d3ae1423, type: 3}
       propertyPath: m_Layer

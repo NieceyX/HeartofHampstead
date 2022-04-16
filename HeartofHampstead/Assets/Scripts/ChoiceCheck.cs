@@ -57,10 +57,11 @@ public bool checkForPoints()
     {
         for (int i = 0; i < texts.Length; i++)
         {
-            Rect rect1 = new Rect(texts[i].localPosition.x, texts[i].localPosition.y, texts[i].rect.width, texts[i].rect.height);
-            Rect rect2 = new Rect(believePanel.localPosition.x, believePanel.localPosition.y, believePanel.rect.width, believePanel.rect.height);
-            Rect rect3 = new Rect(dontPanel.localPosition.x, dontPanel.localPosition.y, dontPanel.rect.width, dontPanel.rect.height);
-            
+            Rect rect1 = new Rect(texts[i].position.x, texts[i].position.y, texts[i].rect.width, texts[i].rect.height);
+            Rect rect2 = new Rect(believePanel.position.x, believePanel.position.y, believePanel.rect.width, believePanel.rect.height);
+            Rect rect3 = new Rect(dontPanel.position.x, dontPanel.position.y, dontPanel.rect.width, dontPanel.rect.height);
+            Debug.Log(rect2);
+            Debug.Log(rect1);
             if (rect1.Overlaps(rect2))
             {
                 Debug.Log("Touching!");

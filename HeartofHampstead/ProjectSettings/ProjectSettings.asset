@@ -270,7 +270,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: b9ce051f42aafc342a83b9ac3b2cd730, type: 3}
+      m_Icon: {fileID: 2800000, guid: 2bc91066ec18aad49b4d660f246b6e19, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -599,6 +599,7 @@ PlayerSettings:
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
     1: STARTER_ASSETS_PACKAGES_CHECKED
+    14: STARTER_ASSETS_PACKAGES_CHECKED
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
