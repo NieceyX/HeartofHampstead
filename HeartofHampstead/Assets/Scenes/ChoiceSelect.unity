@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Drag the texts to either square to set your choices
+  m_text: Drag the clues to the center of either block to make your choices
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 66c25abdf6b5e8f4092c23031269f8aa, type: 2}
   m_sharedMaterial: {fileID: 6534156719183259414, guid: 66c25abdf6b5e8f4092c23031269f8aa, type: 2}
@@ -499,7 +499,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1574,7 +1574,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1688,6 +1688,7 @@ MonoBehaviour:
   - {fileID: 433318616}
   believePanel: {fileID: 384221661}
   dontPanel: {fileID: 1660782655}
+  instructionPanel: {fileID: 894980569}
 --- !u!114 &1957361776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1862,7 +1863,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0

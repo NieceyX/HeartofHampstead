@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    public enum Type { Start, Control, Exit, Main }
+    public enum Type { Start, Control, Exit, Main, Final, Epilog }
     public Type type;
     void Start()
     {
@@ -56,5 +56,12 @@ public class ChangeScene : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("ChoiceSelect");
     }
+    public void FinalDecScreen()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        SceneManager.LoadScene("FinalDecision");
+    }
+
 }
 

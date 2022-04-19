@@ -6,14 +6,6 @@ using UnityEngine.UI;
 
 public class ChoiceCheck : MonoBehaviour
 {
-    /*
-    [SerializeField]
-    private Collider2D[] textColliders;
-    [SerializeField]
-    private Collider2D believeCollider;
-    [SerializeField]
-    private Collider2D dontCollider;
-    */
 
     [SerializeField]
     private RectTransform[] texts;
@@ -22,7 +14,10 @@ public class ChoiceCheck : MonoBehaviour
     [SerializeField]
     private RectTransform dontPanel;
 
-    private ChangeScene scenceControl = new ChangeScene();
+    [SerializeField]
+    private GameObject instructionPanel;
+
+    private ChangeScene sceneControl = new ChangeScene();
 
     public static class Decisions
     {
@@ -41,41 +36,49 @@ public class ChoiceCheck : MonoBehaviour
 
         if (completed)
         {
-            Debug.Log(Decisions.royalty);
-            Debug.Log(Decisions.power);
-            Debug.Log(Decisions.evil);
-            scenceControl.StartGame();
+            if (ObjectController.Stats.day - 1 == 3)
+            {
+                sceneControl.FinalDecScreen();
+            }
+            else
+            {
+                sceneControl.StartGame();
+            }
         }
         else
         {
-            //promt to finish
+            instructionPanel.GetComponentInChildren<TextMeshProUGUI>().text = "Please drag all clues to the center of one of the two blocks";
+            instructionPanel.SetActive(true);
         }
 
     }
 
 public bool checkForPoints()
     {
+        int royal = 0;
+        int evil = 0;
+        int power = 0;
         for (int i = 0; i < texts.Length; i++)
         {
             Rect rect1 = new Rect(texts[i].position.x, texts[i].position.y, texts[i].rect.width, texts[i].rect.height);
             Rect rect2 = new Rect(believePanel.position.x, believePanel.position.y, believePanel.rect.width, believePanel.rect.height);
             Rect rect3 = new Rect(dontPanel.position.x, dontPanel.position.y, dontPanel.rect.width, dontPanel.rect.height);
-            Debug.Log(rect2);
-            Debug.Log(rect1);
+
             if (rect1.Overlaps(rect2))
             {
-                Debug.Log("Touching!");
-                if (i == 0) { Debug.Log("ROYALTY ADD"); Decisions.royalty += 1; }
-                else if (i == 1) { Debug.Log("EVIL ADD"); Decisions.evil += 1; }
-                else if (i == 2) { Debug.Log("POWER ADD"); Decisions.power += 1; }
+                if (i == 0) royal = 1;
+                else if (i == 1) evil = 1;
+                else if (i == 2) power = 1;
             }
             else if (!rect1.Overlaps(rect3))
             {
-                Debug.Log("Not Touching!");
                 return false;
             }
             
         }
+        Decisions.royalty += royal;
+        Decisions.evil += evil;
+        Decisions.power += power;
         return true;
     }
 }
