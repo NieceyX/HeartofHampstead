@@ -63,5 +63,12 @@ public class ChangeScene : MonoBehaviour
         SceneManager.LoadScene("FinalDecision");
     }
 
+    public void EpilogScreen()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        SceneManager.LoadScene("Epilog");
+    }
+
 }
 

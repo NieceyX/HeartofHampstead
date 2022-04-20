@@ -11,7 +11,16 @@ public class FinalDecision : MonoBehaviour
     private int power;
 
     [SerializeField]
-    private GameObject tog;
+    private TextMeshProUGUI decText;
+
+    [SerializeField]
+    private GameObject decButton;
+    [SerializeField]
+    private GameObject contButton;
+
+    public static int final;
+
+    private ChangeScene sceneControl = new ChangeScene();
 
     /*
     [SerializeField]
@@ -32,16 +41,29 @@ public class FinalDecision : MonoBehaviour
         int max = Mathf.Max(royal, Mathf.Max(evil, power));
         if (max == royal)
         {
-            tog.GetComponentInChildren<TextMeshProUGUI>().text = "The Orb belongs to the royal family. I should return it to them for their safe keeping.";
+            final = 1;
+            decText.text = "The Orb belongs to the royal family. I should return it to them for their safe keeping.";
         }
         else if (max == evil)
         {
-            tog.GetComponentInChildren<TextMeshProUGUI>().text = "The Orb is the worst evil this world has faced. I should destroy it to rid the world from it.";
+            final = 2;
+            decText.text = "The Orb is the worst evil this world has faced. I should destroy it to rid the world from it.";
         }
         else
         {
-            tog.GetComponentInChildren<TextMeshProUGUI>().text = "The orb is the most powerful item that has ever existed. I should keep it and use it to help others.";
+            final = 3;
+            decText.text = "The orb is the most powerful item that has ever existed. I should keep it and use it to help others.";
         }
+    }
+
+    public void controlButton()
+    {
+        final = 0;
+        sceneControl.EpilogScreen();
+    }
+    public void decisionButton()
+    {
+        sceneControl.EpilogScreen();
     }
 
 

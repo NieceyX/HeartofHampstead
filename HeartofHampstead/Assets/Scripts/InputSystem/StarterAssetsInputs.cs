@@ -1,8 +1,10 @@
+using System.Collections;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 #endif
+
 
 namespace StarterAssets
 {
@@ -19,6 +21,13 @@ namespace StarterAssets
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
+
+		[Header("Sound Settings")]
+		[SerializeField]
+		public AudioSource walkSound;
+		private bool playsteps = false;
+		[SerializeField]
+		public AudioSource pageSound;
 
 #if !UNITY_IOS || !UNITY_ANDROID
 		[Header("Mouse Cursor Settings")]
@@ -69,6 +78,17 @@ namespace StarterAssets
 		public void MoveInput(Vector2 newMoveDirection)
 		{
 			move = newMoveDirection;
+
+			if (move == Vector2.zero && walkSound.isPlaying && playsteps)
+            {
+				walkSound.Stop();
+				playsteps = false;
+			}
+			else if (!walkSound.isPlaying && !playsteps)
+			{
+				playsteps = true;
+				walkSound.Play();
+			}
 		} 
 
 		public void LookInput(Vector2 newLookDirection)
@@ -94,6 +114,7 @@ namespace StarterAssets
 				if (hitCollider.gameObject.layer == 6 || hitCollider.gameObject.layer == 8)
                 {
 					_animator.SetTrigger("Grab");
+					pageSound.Play();
 					hitCollider.SendMessage("Operate", SendMessageOptions.DontRequireReceiver);
 				}
 				else if (hitCollider.gameObject.layer == 7)
@@ -131,5 +152,4 @@ namespace StarterAssets
 #endif
 
 	}
-	
 }
