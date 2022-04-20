@@ -13,6 +13,13 @@ public class DeviceOperator : MonoBehaviour
     [HideInInspector]
     public int collected = 0;
 
+    public static class VillagerText
+    {
+        public static string firstVill1;
+        public static string secVill1;
+        public static string thirdVill1;
+    }
+
     public static class ObjectConts
     {
         public static bool set = false;
@@ -22,19 +29,13 @@ public class DeviceOperator : MonoBehaviour
         public static string firstObj2;
         public static string firstObj3;
 
-        public static string firstVill1;
-
         public static string secObj1;
         public static string secObj2;
         public static string secObj3;
 
-        public static string secVill1;
-
         public static string thirdObj1;
         public static string thirdObj2;
         public static string thirdObj3;
-
-        public static string thirdVill1;
     }
 
     void Start()
@@ -49,19 +50,19 @@ public class DeviceOperator : MonoBehaviour
             ObjectConts.firstObj2 = "A source of great evil came to town, scorching everything in its way";
             ObjectConts.firstObj3 = "The orb's power was immense, and often overwhelming";
 
-            ObjectConts.firstVill1 = "Hey Ona! I heard a rumor that a guest in the castle stole something from the Queen!";
+            VillagerText.firstVill1 = "Hey Ona! I heard a rumor that a guest in the castle stole something from the Queen!";
 
             ObjectConts.secObj1 = "The lord's gift kept the heirs in power, and power it gave";
             ObjectConts.secObj2 = "The evil object cursed all those who possesed it to lose their minds";
             ObjectConts.secObj3 = "The power grew, and everyone could see the glow for miles around";
 
-            ObjectConts.secVill1 = "Wow, you seem to have a glow about you today, your confidence and stength is showing!";
+            VillagerText.secVill1 = "Wow, you seem to have a glow about you today, your confidence and stength is showing!";
 
             ObjectConts.thirdObj1 = "The Queen kept the gift safe from others, outsiders never saw it";
             ObjectConts.thirdObj2 = "The great evil brought war and famine to the land, to all except those who worshiped it";
             ObjectConts.thirdObj3 = "This power was kept safe from those who sought to use it for harm";
 
-            ObjectConts.thirdVill1 = "Hey Ona, I've had these nightmares the past two nights, what could it mean?";
+            VillagerText.thirdVill1 = "Hey Ona, I've had these nightmares the past two nights, what could it mean?";
 
             ObjectConts.set = true;
         }
@@ -121,22 +122,17 @@ public class DeviceOperator : MonoBehaviour
                 break;
 
             case 10:
-                popUpText.text = ObjectConts.firstVill1;
-                //collected += 1;
+                popUpText.text = VillagerText.firstVill1;
                 break;
 
             case 11:
-                popUpText.text = ObjectConts.secVill1;
-                //collected += 1;
+                popUpText.text = VillagerText.secVill1;
                 break;
 
             case 12:
-                popUpText.text = ObjectConts.thirdVill1;
-                //collected += 1;
+                popUpText.text = VillagerText.thirdVill1;
                 break;
         }
-        //Cursor.lockState = CursorLockMode.None;
-        //Cursor.visible = true;
         popUp.SetActive(true);
     }
 
