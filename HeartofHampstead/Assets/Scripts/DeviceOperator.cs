@@ -18,6 +18,8 @@ public class DeviceOperator : MonoBehaviour
         public static string firstVill1;
         public static string secVill1;
         public static string thirdVill1;
+        public static string forthVill1;
+        public static string fifthVill1;
     }
 
     public static class ObjectConts
@@ -48,21 +50,22 @@ public class DeviceOperator : MonoBehaviour
 
             ObjectConts.firstObj1 = "An object of high value was given to the royal family eons ago";
             ObjectConts.firstObj2 = "A source of great evil came to town, scorching everything in its way";
-            ObjectConts.firstObj3 = "The orb's power was immense, and often overwhelming";
-
-            VillagerText.firstVill1 = "Hey Ona! I heard a rumor that a guest in the castle stole something from the Queen!";
+            ObjectConts.firstObj3 = "The orb's power was immense, and often overwhelming";         
 
             ObjectConts.secObj1 = "The lord's gift kept the heirs in power, and power it gave";
             ObjectConts.secObj2 = "The evil object cursed all those who possesed it to lose their minds";
             ObjectConts.secObj3 = "The power grew, and everyone could see the glow for miles around";
-
-            VillagerText.secVill1 = "Wow, you seem to have a glow about you today, your confidence and stength is showing!";
-
+            
             ObjectConts.thirdObj1 = "The Queen kept the gift safe from others, outsiders never saw it";
             ObjectConts.thirdObj2 = "The great evil brought war and famine to the land, to all except those who worshiped it";
             ObjectConts.thirdObj3 = "This power was kept safe from those who sought to use it for harm";
 
+
+            VillagerText.firstVill1 = "Hey Ona! I heard a rumor that a guest in the castle stole something from the Queen!";
+            VillagerText.secVill1 = "Wow, you seem to have a glow about you today, your confidence and stength is showing!";
             VillagerText.thirdVill1 = "Hey Ona, I've had these nightmares the past two nights, what could it mean?";
+            VillagerText.forthVill1 = "You won't believe this! Apparently the rulers have lied about an important item they had for eons!";
+            VillagerText.fifthVill1 = "I've never met anyone like you Ona. You seem more powerful than any who have come before you.";
 
             ObjectConts.set = true;
         }
@@ -131,6 +134,14 @@ public class DeviceOperator : MonoBehaviour
 
             case 12:
                 popUpText.text = VillagerText.thirdVill1;
+                break;
+
+            case 13:
+                popUpText.text = VillagerText.forthVill1;
+                break;
+
+            case 14:
+                popUpText.text = VillagerText.fifthVill1;
                 break;
         }
         popUp.SetActive(true);

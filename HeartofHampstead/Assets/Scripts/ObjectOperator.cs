@@ -10,6 +10,9 @@ public class ObjectOperator : MonoBehaviour
     GameObject control;
 
     [SerializeField]
+    private Animator villAnim;
+
+    [SerializeField]
     private GameObject objCont;
 
     ChangeScene sceneCont = new ChangeScene();
@@ -29,6 +32,7 @@ public class ObjectOperator : MonoBehaviour
         }
         else if (this.gameObject.layer == 7)
         {
+            villAnim.SetTrigger("talk");
             control.GetComponent<DeviceOperator>().ShowMessage(code);
         }
         else
