@@ -388,10 +388,10 @@ RectTransform:
   m_Father: {fileID: 1490456062}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.30064338}
-  m_AnchorMax: {x: 1, y: 0.69941086}
+  m_AnchorMin: {x: 0.06342253, y: 0.30064338}
+  m_AnchorMax: {x: 0.9365775, y: 0.69941086}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 18}
+  m_SizeDelta: {x: 22, y: 18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &316065462
 MonoBehaviour:
@@ -1082,10 +1082,10 @@ RectTransform:
   m_Father: {fileID: 897044299}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.039, y: 0.18746836}
-  m_AnchorMax: {x: 0.38668385, y: 0.337}
-  m_AnchoredPosition: {x: 0.5, y: -2.9999695}
-  m_SizeDelta: {x: -156, y: -28}
+  m_AnchorMin: {x: 0.12669842, y: 0.20727034}
+  m_AnchorMax: {x: 0.30317461, y: 0.30975252}
+  m_AnchoredPosition: {x: -1.5, y: -1.4999847}
+  m_SizeDelta: {x: 6, y: -9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1365847887
 MonoBehaviour:
@@ -1213,10 +1213,10 @@ RectTransform:
   m_Father: {fileID: 1365847886}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.30064338}
-  m_AnchorMax: {x: 1, y: 0.69941086}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 18}
+  m_AnchorMin: {x: 0.116000004, y: 0.36236644}
+  m_AnchorMax: {x: 0.91300005, y: 0.69941086}
+  m_AnchoredPosition: {x: -2.5, y: -1}
+  m_SizeDelta: {x: 35, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1372273830
 MonoBehaviour:
@@ -1349,10 +1349,10 @@ RectTransform:
   m_Father: {fileID: 897044299}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.62065816, y: 0.18746836}
-  m_AnchorMax: {x: 0.97582054, y: 0.3521266}
-  m_AnchoredPosition: {x: 1, y: -5.9999695}
-  m_SizeDelta: {x: -163, y: -34}
+  m_AnchorMin: {x: 0.71764034, y: 0.22212182}
+  m_AnchorMax: {x: 0.8895344, y: 0.29242578}
+  m_AnchoredPosition: {x: -4, y: -0.99998474}
+  m_SizeDelta: {x: 11, y: 4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1490456063
 MonoBehaviour:

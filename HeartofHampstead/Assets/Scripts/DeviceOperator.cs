@@ -79,6 +79,11 @@ public class DeviceOperator : MonoBehaviour
             popUpText.text = "Collect all of the information you can, find items and talk to villagers";
             popUp.SetActive(true);
         }
+        else
+        {
+            popUpText.text = "The next day has begun, time to find more information!";
+            popUp.SetActive(true);
+        }
     }
     public void ShowMessage(int code)
     {

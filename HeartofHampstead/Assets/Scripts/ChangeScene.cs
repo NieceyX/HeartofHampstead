@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    public enum Type { Start, Control, Exit, Main, Final, Epilog }
+    public enum Type { Start, Control, Exit, Main, Final, Epilog, Prolog }
     public Type type;
     void Start()
     {
@@ -28,6 +28,9 @@ public class ChangeScene : MonoBehaviour
                 break;
             case Type.Main:
                 MainScreen();
+                break;
+            case Type.Prolog:
+                PrologScreen();
                 break;
         }
     }
@@ -73,6 +76,13 @@ public class ChangeScene : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("Epilog");
+    }
+
+    public void PrologScreen()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        SceneManager.LoadScene("Prolog");
     }
 
 }

@@ -18,6 +18,7 @@ namespace StarterAssets
 		public bool sprint;
 		public bool interact;
 		public bool button;
+		public bool pause;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -28,6 +29,9 @@ namespace StarterAssets
 		private bool playsteps = false;
 		[SerializeField]
 		public AudioSource pageSound;
+
+		[SerializeField]
+		private GameObject pauseMenu;
 
 #if !UNITY_IOS || !UNITY_ANDROID
 		[Header("Mouse Cursor Settings")]
@@ -56,11 +60,12 @@ namespace StarterAssets
 			JumpInput(value.isPressed);
 		}
 
+		
 		public void OnSprint(InputValue value)
 		{
 			SprintInput(value.isPressed);
 		}
-
+		
 		public void OnInteract(InputValue value)
 		{
 			InteractInput(value.isPressed);
@@ -69,6 +74,11 @@ namespace StarterAssets
 		public void OnButton(InputValue value)
 		{
 			ButtonInput(value.isPressed);
+		}
+
+		public void OnPause(InputValue value)
+		{
+			PauseInput(value.isPressed);
 		}
 #else
 		// old input sys if we do decide to have it (most likely wont)...
@@ -135,6 +145,27 @@ namespace StarterAssets
 				popUp.gameObject.SetActive(false);
 			}
 
+		}
+
+        [System.Obsolete]
+        public void PauseInput(bool newPauseState)
+		{
+			Scene scene = SceneManager.GetActiveScene();
+			if (scene.name == "World")
+			{
+				if (!pauseMenu.active)
+				{
+					Cursor.visible = true;
+					Cursor.lockState = CursorLockMode.None;
+					pauseMenu.gameObject.SetActive(true);
+				}
+				else
+				{
+					Cursor.visible = false;
+					Cursor.lockState = CursorLockMode.Locked;
+					pauseMenu.gameObject.SetActive(false);
+				}
+            }
 		}
 
 #if !UNITY_IOS || !UNITY_ANDROID

@@ -39,10 +39,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -364,6 +362,65 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
+    Assets/Scenes/Prolog.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1528}
+    - Class: 114
+      Script: {instanceID: 1842}
+    - Class: 114
+      Script: {instanceID: 2580}
+    - Class: 114
+      Script: {instanceID: 2748}
+    - Class: 114
+      Script: {instanceID: 2802}
+    - Class: 114
+      Script: {instanceID: 2950}
+    - Class: 114
+      Script: {instanceID: 3304}
+    - Class: 114
+      Script: {instanceID: 3612}
+    - Class: 114
+      Script: {instanceID: 4064}
+    - Class: 114
+      Script: {instanceID: 4420}
+    - Class: 114
+      Script: {instanceID: 4520}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/World.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -406,6 +463,8 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 1528}
+    - Class: 114
       Script: {instanceID: 1532}
     - Class: 114
       Script: {instanceID: 1842}
@@ -432,6 +491,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3112}
     - Class: 114
+      Script: {instanceID: 3304}
+    - Class: 114
       Script: {instanceID: 3584}
     - Class: 114
       Script: {instanceID: 3612}
@@ -443,6 +504,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4064}
     - Class: 114
       Script: {instanceID: 4420}
+    - Class: 114
+      Script: {instanceID: 4520}
     - Class: 114
       Script: {instanceID: 4824}
     - Class: 114
@@ -466,6 +529,8 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 218
       Script: {instanceID: 0}
@@ -624,7 +689,7 @@ ScriptsOnlyBuild:
     className: CinemachineCollider
   - hash:
       serializedVersion: 2
-      Hash: 21a813aee16725ef1a91f961c9cc2a30
+      Hash: e3474023d2ee9fbf7ec97b3363cc6461
     assemblyName: Assembly-CSharp.dll
     namespaceName: StarterAssets
     className: StarterAssetsInputs
@@ -1458,5 +1523,6 @@ ScriptsOnlyBuild:
   - Assets/Scenes/ChoiceSelect.unity
   - Assets/Scenes/FinalDecision.unity
   - Assets/Scenes/Epilog.unity
-  playerPath: C:/Users/denie/OneDrive/Documents/GitHub/Remember/Builds/Build2/Heart
+  - Assets/Scenes/Prolog.unity
+  playerPath: C:/Users/denie/OneDrive/Documents/GitHub/Remember/Builds/Build3/Heart
     of Hampstead.exe
