@@ -56,6 +56,7 @@ public class ChangeScene : MonoBehaviour
         ChoiceCheck.Decisions.power = 0;
         ChoiceCheck.Decisions.royalty = 0;
         ObjectController.Stats.day = 1;
+        DeviceOperator.ObjectConts.set = false;
         SceneManager.LoadScene("MainMenu");
     }
     public void ChoiceScreen()

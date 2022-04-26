@@ -69,10 +69,15 @@ public class DeviceOperator : MonoBehaviour
 
             ObjectConts.set = true;
         }
-        if (ObjectController.Stats.day == 4)
+        if (ObjectController.Stats.day == 2)
         {
-            popUpText.text = "Thank you for playing, that is all for the demo so far!";
+            popUpText.text = "The next day has begun, time to find more information!";
             popUp.SetActive(true);
+            VillagerText.firstVill1 = "What...what's in your bag? Please get rid of that right away! It's not safe.";
+            VillagerText.secVill1 = "Some trader came through town asking about an object of unimaginable power.";
+            VillagerText.thirdVill1 = "Did you know I had an apprentice? I never knew what happened to her. She spoke in riddles one day then dissapered.";
+            VillagerText.forthVill1 = "How are you today? You look like you're not getting very good sleep.";
+            VillagerText.fifthVill1 = "Hello dear, don't go too far out today, the forest has eyes.";
         }
         else if (ObjectController.Stats.day == 1)
         {
@@ -83,6 +88,11 @@ public class DeviceOperator : MonoBehaviour
         {
             popUpText.text = "The next day has begun, time to find more information!";
             popUp.SetActive(true);
+            VillagerText.firstVill1 = "I had a dream last night that you walked into a dark mist and never came back!";
+            VillagerText.secVill1 = "You always seem so sure of yourself, Ona. Can you teach me how to be as confident?";
+            VillagerText.thirdVill1 = "A knight from the castle came through town last night, she said there is a reward for anyone who can return a stolen object.";
+            VillagerText.forthVill1 = "Ona! It's great to see you today. I hope you stay around.";
+            VillagerText.fifthVill1 = "Goodmorning. Do you have lot's of plans today? Don't get into trouble.";
         }
     }
     public void ShowMessage(int code)
@@ -151,6 +161,4 @@ public class DeviceOperator : MonoBehaviour
         }
         popUp.SetActive(true);
     }
-
-
 }

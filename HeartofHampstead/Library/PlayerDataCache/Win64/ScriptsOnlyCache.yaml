@@ -39,8 +39,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -677,7 +679,7 @@ ScriptsOnlyBuild:
     className: Draggable
   - hash:
       serializedVersion: 2
-      Hash: 2d967d8260be05a06bc944a848d9d3da
+      Hash: 8cc55285e693611a31e88866aaf708ff
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ObjectOperator
@@ -1463,6 +1465,12 @@ ScriptsOnlyBuild:
     className: CinemachineBasicMultiChannelPerlin
   - hash:
       serializedVersion: 2
+      Hash: ad92b0c7204c3019231091bf029f8297
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: WalkSound
+  - hash:
+      serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1524,5 +1532,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/FinalDecision.unity
   - Assets/Scenes/Epilog.unity
   - Assets/Scenes/Prolog.unity
-  playerPath: C:/Users/denie/OneDrive/Documents/GitHub/Remember/Builds/Build3/Heart
+  playerPath: C:/Users/denie/OneDrive/Documents/GitHub/Remember/Builds/Build4/Heart
     of Hampstead.exe

@@ -13,12 +13,22 @@ public class ObjectOperator : MonoBehaviour
     private Animator villAnim;
 
     [SerializeField]
-    private GameObject objCont;
+    private List<Transform> places;
 
     ChangeScene sceneCont = new ChangeScene();
 
     void Start()
     {
+        if (ObjectController.Stats.day == 2 && this.gameObject.layer == 7)
+        {
+            this.gameObject.transform.position = places[0].position;
+            this.gameObject.transform.rotation = places[0].rotation;
+        }
+        else if (ObjectController.Stats.day == 3 && this.gameObject.layer == 7)
+        {
+            this.gameObject.transform.position = places[1].position;
+            this.gameObject.transform.rotation = places[1].rotation;
+        }
 
     }
 
